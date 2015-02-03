@@ -32,4 +32,9 @@ if [ check_swappiness != 10 ]
     echo "10" > /proc/sys/vm/swappiness
 fi
 
+echo "8" > /proc/sys/vm/page-cluster;
+echo "64000" > /proc/sys/kernel/msgmni;
+echo "64000" > /proc/sys/kernel/msgmax;
+echo "10" > /proc/sys/fs/lease-break-time;
+echo "500,512000,64,2048" > /proc/sys/kernel/sem;
 
