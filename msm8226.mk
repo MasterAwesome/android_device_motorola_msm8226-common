@@ -177,6 +177,9 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
     ueventd.qcom.rc
+#Optimizations require copying of files to /etc/ as well
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/init.optimizations.sh:system/etc/init.optimizations.sh
 
 # Thermal
 PRODUCT_COPY_FILES += \
