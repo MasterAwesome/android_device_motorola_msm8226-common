@@ -27,12 +27,14 @@ if [ check_migration_cost != 1000000 ]
     echo "1000000" > /proc/sys/kernel/sched_migration_cost
 fi
 
-if [ check_swappiness != 10 ]
+if [ check_swappiness != 30 ]
  then
-    echo "10" > /proc/sys/vm/swappiness
+    echo "30" > /proc/sys/vm/swappiness
 fi
 
 echo "8" > /proc/sys/vm/page-cluster;
+echo "100" > /proc/sys/vm/overcommit_ratio;
+echo "1" > /proc/sys/vm/overcommit_memory;
 echo "64000" > /proc/sys/kernel/msgmni;
 echo "64000" > /proc/sys/kernel/msgmax;
 echo "10" > /proc/sys/fs/lease-break-time;
